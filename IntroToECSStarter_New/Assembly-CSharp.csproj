@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{28F04981-D890-61F6-6A85-D2C3F5550898}</ProjectGuid>
+    <ProjectGuid>{14AADF8A-C75E-E7ED-CEE5-AC7FB660C839}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,22 +54,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.dll" />
-    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.LambdaJobs.dll" />
-    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.JobEntity.dll" />
-    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Sample.dll" />
-    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Common.dll" />
-    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.AuthoringComponent.dll" />
+    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter_New\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.dll" />
+    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter_New\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.LambdaJobs.dll" />
+    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter_New\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.JobEntity.dll" />
+    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter_New\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Sample.dll" />
+    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter_New\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Common.dll" />
+    <Analyzer Include="E:\My\Tanke_Ecs\IntroToECSStarter_New\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.AuthoringComponent.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\RW\Scripts\Player\PlayerWeapon.cs" />
+    <Compile Include="Assets\RW\Scripts\ECS\Systems\FacePlayerSystem.cs" />
     <Compile Include="Assets\RW\Scripts\NonECS\EnemyNonECS.cs" />
+    <Compile Include="Assets\RW\Scripts\ECS\Systems\DestructionSystem.cs" />
+    <Compile Include="Assets\RW\Scripts\ECS\ComponentData\BulletTag.cs" />
     <Compile Include="Assets\RW\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\RW\Scripts\ECS\ComponentData\EnemyTag.cs" />
     <Compile Include="Assets\RW\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\RW\Scripts\Player\PlayerInput.cs" />
     <Compile Include="Assets\RW\Scripts\Managers\ObjectPooler.cs" />
     <Compile Include="Assets\RW\Scripts\Managers\EnemySpawner.cs" />
     <Compile Include="Assets\RW\Scripts\NonECS\TimeoutNonECS.cs" />
+    <Compile Include="Assets\RW\Scripts\ECS\Systems\MovementSystem.cs" />
     <Compile Include="Assets\RW\Scripts\NonECS\GameManagerNonECS.cs" />
     <Compile Include="Assets\RW\Scripts\NonECS\EnemySpawnerNonECS.cs" />
     <Compile Include="Assets\RW\Scripts\Managers\FXManager.cs" />
@@ -77,11 +82,6 @@
     <Compile Include="Assets\RW\Scripts\NonECS\BulletMoverNonECS.cs" />
     <Compile Include="Assets\RW\Scripts\NonECS\PlayerWeaponNonECS.cs" />
     <Compile Include="Assets\RW\Scripts\ECS\ComponentData\MoveForwardComponent.cs" />
-    <Compile Include="Assets\RW\Scripts\ECS\Systems\MovementSystem.cs" />
-    <Compile Include="Assets\RW\Scripts\ECS\Systems\FacePlayerSystem.cs" />
-    <Compile Include="Assets\RW\Scripts\ECS\ComponentData\EnemyTag.cs" />
-    <Compile Include="Assets\RW\Scripts\ECS\ComponentData\BulletTag.cs" />
-    <Compile Include="Assets\RW\Scripts\ECS\Systems\DestructionSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

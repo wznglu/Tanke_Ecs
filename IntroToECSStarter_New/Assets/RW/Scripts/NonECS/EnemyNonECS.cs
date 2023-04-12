@@ -76,7 +76,7 @@ public class EnemyNonECS : MonoBehaviour
             {
                 Destroy(gameObject);
                 Destroy(bullet.gameObject);
-                FXManager.Instance.CreateExplosion(transform.position);
+                //FXManager.Instance.CreateExplosion(transform.position);
                 GameManagerNonECS.AddScore(1);
             }
         }
@@ -90,12 +90,12 @@ public class EnemyNonECS : MonoBehaviour
         if (Vector3.Distance(playerPosition, transform.position) < collisionDistance)
         {
             Destroy(gameObject);
-            FXManager.Instance.CreateExplosion(transform.position);
+           // FXManager.Instance.CreateExplosion(transform.position);
 
             // player is invincible by default in this non-ECS version of the demo
             if (canHitPlayer)
             {
-                FXManager.Instance.CreateExplosion(playerPosition);
+              //  FXManager.Instance.CreateExplosion(playerPosition);
                 GameManagerNonECS.EndGame();
             }
         }
