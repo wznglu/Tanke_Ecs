@@ -182,12 +182,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe0f8c5f404b9e48ab929d832b327c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 100
-  spawnInterval: 3
+  spawnCount: 500
+  spawnInterval: 1
   spawnRadius: 30
-  difficultyBonus: 5
+  difficultyBonus: 100
   minSpeed: 4
   maxSpeed: 12
+  mEntityObj: {fileID: 8672307886139396931, guid: ded51d39c1cadbe44b4c9511ee245183,
+    type: 3}
 --- !u!4 &1786001292
 Transform:
   m_ObjectHideFlags: 0
@@ -312,22 +314,22 @@ PrefabInstance:
     - target: {fileID: 5646243845509644241, guid: 43f224a9aa318a6469da6f3168f124a7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.15737475
+      value: -0.15737486
       objectReference: {fileID: 0}
     - target: {fileID: 5646243845509644241, guid: 43f224a9aa318a6469da6f3168f124a7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10485609
+      value: 0.104856156
       objectReference: {fileID: 0}
     - target: {fileID: 5646243845536015638, guid: 43f224a9aa318a6469da6f3168f124a7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.15737475
+      value: -0.15737486
       objectReference: {fileID: 0}
     - target: {fileID: 5646243845536015638, guid: 43f224a9aa318a6469da6f3168f124a7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10485609
+      value: 0.104856156
       objectReference: {fileID: 0}
     - target: {fileID: 5646243846246999692, guid: 43f224a9aa318a6469da6f3168f124a7,
         type: 3}
@@ -436,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 7319728304887110948, guid: 41e8308a9678ee24b8162326c24af540,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7319728304887110955, guid: 41e8308a9678ee24b8162326c24af540,
         type: 3}
@@ -537,7 +539,7 @@ PrefabInstance:
     - target: {fileID: 6892269689495069278, guid: 2ac3e2c1569c4d247b82208ba7ffe178,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7753705179663125290, guid: 2ac3e2c1569c4d247b82208ba7ffe178,
         type: 3}

@@ -1,39 +1,15 @@
-﻿/*
- * Copyright (c) 2020 Razeware LLC
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
- * distribute, sublicense, create a derivative work, and/or sell copies of the 
- * Software in any work that is designed, intended, or marketed for pedagogical or 
- * instructional purposes related to programming, coding, application development, 
- * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works, 
- * or sale is expressly withheld.
- *    
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+﻿
 
 using UnityEngine;
 using Unity.Mathematics;
 
-
+using UnityEngine;
+using Unity.Entities;
+using Unity.Transforms;
 using Random = UnityEngine.Random;
-
+using Unity.Transforms;
+using Unity.Rendering;
+using Unity.Collections;
 
 /// <summary>
 /// spawns a swarm of enemy entities offscreen, encircling the player
@@ -43,10 +19,10 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawner")]
     // number of enemies generated per interval
-    [SerializeField] private int spawnCount = 30;
+    [SerializeField] private int spawnCount = 10;
 
     // time between spawns
-    [SerializeField] private float spawnInterval = 3f;
+    [SerializeField] private float spawnInterval = 1f;
 
     // enemies spawned on a circle of this radius
     [SerializeField] private float spawnRadius = 30f;
@@ -66,18 +42,36 @@ public class EnemySpawner : MonoBehaviour
     private bool canSpawn;
 
 
+    public Entity mEntity;
 
+    public GameObject mEntityObj;
 
+    private EntityManager entityManager;
 
     private void Start()
     {
-
+        entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+        mEntity = GameObjectConversionUtility.ConvertGameObjectHierarchy(mEntityObj, GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null));
     }
 
     // spawns enemies in a ring around the player
     private void SpawnWave()
     {
-
+        // 1
+        var enemyArray = new NativeArray<Entity>(spawnCount, Allocator.Temp);
+        // 2
+        for (int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i] = entityManager.Instantiate(mEntity);
+            // 3
+            entityManager.SetComponentData(enemyArray[i], new Translation { Value = RandomPointOnCircle(spawnRadius) });
+            // 4
+            entityManager.SetComponentData(enemyArray[i], new MoveForward { speed = Random.Range(minSpeed, maxSpeed) });
+        }
+        // 5  
+        enemyArray.Dispose();
+        // 6
+        spawnCount += difficultyBonus;
     }
 
     // get a random point on a circle with given radius
