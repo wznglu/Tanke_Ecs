@@ -71,7 +71,8 @@ public class PlayerWeapon : MonoBehaviour
         entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
         // create entity prefab from the game object prefab, using default conversion settings
-        var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null);
+        BlobAssetStore aa = new BlobAssetStore();
+        var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, aa);
         bulletEntityPrefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(bulletPrefab, settings);
     }
 

@@ -50,8 +50,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        BlobAssetStore aa = new BlobAssetStore();
         entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        mEntity = GameObjectConversionUtility.ConvertGameObjectHierarchy(mEntityObj, GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null));
+        mEntity = GameObjectConversionUtility.ConvertGameObjectHierarchy(mEntityObj, GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, aa));
     }
 
     // spawns enemies in a ring around the player
