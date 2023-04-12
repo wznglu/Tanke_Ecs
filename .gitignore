@@ -6,7 +6,7 @@
 AssetBundleOut/
 AssetBundlePatch/
 Assets/AssetStoreTools*
-packages/
+
 bin/
 /EXPORT/
 .DS_Store
@@ -49,11 +49,3 @@ DownLoad
 Logs/
 */.idea/
 client/Assets/StreamingAssets/
-/GameScripts/Client/pdb2mdb.bat
-/client/Assets/ThinkAnalyticsSDK/Plugins/Android/.idea
-/client/Assets/Plugins/Editor/JetBrains.RiderFlow
-/client/Assets/Plugins/Editor/JetBrains.RiderFlow.meta
-/client/Assets/RiderFlow.UserData
-/client/Assets/RiderFlow.UserData.meta
-/client/Assets/Plugins/AllIn1SpriteShader.meta
-/client/Assets/Plugins/AllIn1SpriteShader
